@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Messages">
+
+        <EditTextPreference
+            android:key="editTextPref"
+            android:title="Your Signature"
+            android:summary="%s"
+            />
+
+        <ListPreference
+            android:key="listPref"
+            android:summary="%s"
+            android:title="Default reply action"
+            android:entries="@array/entries"
+            android:entryValues="@array/entryvalues"
+            />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Sync">
+
+        <SwitchPreference
+            android:key="sync"
+            android:title="Sync email periodically"
+            />
+
+        <SwitchPreference
+            android:key="depenPref"
+            android:title="Downloading incoming attachments"
+            android:dependency="sync"
+            android:summaryOff="Only download attachments when manually requested"
+            android:summaryOn="donn"
+            />
+
+
+    </PreferenceCategory>
+</PreferenceScreen>
